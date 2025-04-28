@@ -15,7 +15,7 @@ export default function NotFound() {
             Sorry, but there&apos;s no such page on my website.{" "}
             Here&apos;s a link to <StyledLink href="/"> the homepage</StyledLink>,{" "}
             or if you believe this is an error, you can{" "}
-            <StyledLink href="https://t.me/otomir23">contact me</StyledLink>.
+            <StyledLink href="https://t.me/faustyu">contact me</StyledLink>.
         </ErrorBase>
     )
 }

@@ -36,8 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 export const metadata: Metadata = {
     title: {
-        default: "Damir Modyarov | @otomir23",
-        template: "%s | @otomir23",
+        default: "Daniil Shashimov | @faustyu",
+        template: "%s | @faustyu",
     },
-    description: "Damir Modyarov is a student web developer and UI designer from Moscow, Russia.",
+    description: "Daniil Shashimov is a thoughts of part-time online troll. from Samara, Russia.",
 }

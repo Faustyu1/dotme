@@ -5,14 +5,14 @@ import {
     RiCloseFill,
     RiLink,
     RiMapPin2Fill,
-    RiMenuFill, RiMusic2Fill,
+    RiMenuFill,
     RiQuillPenFill,
     RiToolsFill,
 } from "@remixicon/react"
 import Image from "next/image"
 import avatar from "@/../public/avatar.jpg"
 import Link from "next/link"
-import { getBlogPosts, getNowPlaying, getProjects, getSocials, getStack } from "@/data"
+import { getBlogPosts, getProjects, getSocials, getStack } from "@/data"
 import { formatDistanceToNow } from "date-fns"
 import { ServerSearchParams } from "@/util"
 import Anchor from "@/components/anchor"
@@ -43,13 +43,11 @@ const load = async (searchParams: ServerSearchParams) => {
         stack,
         projects,
         blog,
-        nowPlaying,
     ] = await Promise.all([
         getSocials(),
         getStack(),
         getProjects(searchParams["project"] || null, Number(searchParams["tool"]) || null),
         getBlogPosts(searchParams["post"] || null),
-        getNowPlaying(),
     ])
 
     return {
@@ -57,7 +55,6 @@ const load = async (searchParams: ServerSearchParams) => {
         stack,
         projects,
         blog,
-        nowPlaying,
     }
 }
 
@@ -68,9 +65,7 @@ export default async function Home({ searchParams }: { searchParams: ServerSearc
         stack,
         projects,
         blog,
-        nowPlaying,
     } = pageData
-    const nowPlayingCover = nowPlaying?.image?.find(i => i.size === "large")?.url || null
     const { tool, ...clearSearchParams } = searchParams
     const selectedTool = (tool
         && stack
@@ -115,19 +110,19 @@ export default async function Home({ searchParams }: { searchParams: ServerSearc
                     />
                     <div className="flex flex-col gap-2">
                         <h1 className="text-2xl sm:text-4xl font-bold text-neutral-900 dark:text-neutral-100">
-                            Damir Modyarov
+                            Daniil Shashimov
                         </h1>
                         <p className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-lg">
-                            Web Developer, UI Designer
+												Thoughts of part-time online troll.
                         </p>
                     </div>
                 </div>
                 <p className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-lg mt-4 sm:mt-8">
-                    hiii! I’m Damir <span className="text-neutral-500">aka @otomir23</span>.
+                    hiii! I'm Daniil <span className="text-neutral-500">aka @faustyu</span>.
                     I live in <RiMapPin2Fill size={16} className="inline align-baseline" />{" "}
-                    <span className="font-bold cursor-help">Moscow, Russia</span>.{" "}
-                    My passion is development and UI design. I do websites, webapps, native apps, bots, mods, games and
-                    much more. I’m currently working as a frontend engineer at Elytrium.{" "}
+                    <span className="font-bold cursor-help">Samara, Russia</span>.{" "}
+                    My passion is development. I do websites, bots, plugins, and
+                    much more. I'm currently not working.{" "}
                     <StyledLink href="/blog/about-me">Read more {"-->"}</StyledLink>
                 </p>
             </section>
@@ -285,54 +280,6 @@ export default async function Home({ searchParams }: { searchParams: ServerSearc
                     )}
                 </Searchable>
             </HomeSection>
-            <section
-                className="mt-4 sm:mt-8 border bg-red-50 dark:bg-red-950 border-red-100 dark:border-red-900 text-red-900
-                dark:text-red-100 p-4 rounded-md relative"
-            >
-                <Anchor id="lastfm" />
-                <h3 className="text-lg font-bold mb-4">
-                    <RiMusic2Fill className="inline mr-2" /> Listening to
-                </h3>
-                {nowPlaying ? (
-                    <Link
-                        className="flex gap-4 sm:flex-row flex-col focus:outline-none focus:bg-red-100 rounded-md
-                        dark:focus:bg-red-900 transition-colors focus:ring-8 ring-red-100 dark:ring-red-900"
-                        href={nowPlaying.url}
-                        target="_blank"
-                    >
-                        {nowPlayingCover ? (
-                            <Image
-                                src={nowPlayingCover}
-                                alt={`Album cover of ${nowPlaying.name} by ${nowPlaying.artist.name}`}
-                                width={174}
-                                height={174}
-                                className="rounded-md"
-                            />
-                        ) : (
-                            <div
-                                className="w-[174px] h-[174px] rounded-md bg-white dark:bg-neutral-950 flex
-                                    items-center justify-center"
-                            >
-                                <RiMusic2Fill size={48} className="inline mr-2 text-neutral-500" />
-                            </div>
-                        )}
-                        <figcaption className="sm:py-2">
-                            <h4 className="text-2xl font-bold">{nowPlaying.name}</h4>
-                            <h5 className="text-lg">
-                                <span className="text-red-800 dark:text-red-200">by</span>{" "}
-                                <span className="font-medium">{nowPlaying.artist.name}</span>
-                            </h5>
-                        </figcaption>
-                    </Link>
-                ) : (
-                    <p className="animate-pulse">
-                        Nothing right now. <StyledLink href="/s/lastfm">View Profile {"-->"}</StyledLink>
-                    </p>
-                )}
-                <StyledLink className="absolute right-2 bottom-2 text-xs" href="https://last.fm" target="_blank">
-                    Powered by Last.fm
-                </StyledLink>
-            </section>
             <noscript>
                 <p className="mt-4 sm:mt-8">
                     <RiAlertFill className="inline" />{" "}

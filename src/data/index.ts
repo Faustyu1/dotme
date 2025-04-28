@@ -1,6 +1,4 @@
 import { db } from "@/data/db"
-import SimpleFM from "@solely/simple-fm"
-import { env } from "@/env.mjs"
 import { projectsToTools } from "@/data/db/schema"
 import { unstable_cache } from "next/cache"
 
@@ -88,12 +86,3 @@ export const getBlogPost = unstable_cache(async (slug: string) => {
     revalidate: databaseRevalidationTime,
     tags: [databaseRevalidationTag],
 })
-
-export async function getNowPlaying() {
-    const lastFm = new SimpleFM(env.LASTFM_API_KEY)
-    const data = await lastFm.user.getRecentTracks({
-        username: env.LASTFM_USERNAME,
-    })
-    if (!data.search.nowPlaying) return null
-    return data.tracks[0] || null
-}

@@ -1,6 +1,6 @@
 # otomir23/dotme
 
-[otomir23.me](https://otomir23.me) is my personal website with my portfolio, socials,
+[faustyu.me](https://faustyu.me) is my personal website with my portfolio, socials,
 blog and biography. 
 
 - Made with `NextJS`, `TailwindCSS` and `TypeScript`.
@@ -26,3 +26,5 @@ blog and biography.
 - `lint`: Runs ESLint.
 - `db:push`: Update Vercel Postgres database schema
 - `db:studio`: Open Drizzle Studio
+
+https://github.com/otomir23/dotme

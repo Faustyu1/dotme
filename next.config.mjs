@@ -5,12 +5,8 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: "https",
+                protocol: "http",
                 hostname: "i.otomir23.me",
-            },
-            {
-                protocol: "https",
-                hostname: "lastfm.freetls.fastly.net",
             },
         ],
         dangerouslyAllowSVG: true,
