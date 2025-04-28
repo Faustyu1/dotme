@@ -113,16 +113,16 @@ export default async function Home({ searchParams }: { searchParams: ServerSearc
                             Daniil Shashimov
                         </h1>
                         <p className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-lg">
-												Thoughts of part-time online troll.
+                            Thoughts of part-time online troll.
                         </p>
                     </div>
                 </div>
                 <p className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-lg mt-4 sm:mt-8">
-                    hiii! I'm Daniil <span className="text-neutral-500">aka @faustyu</span>.
+                    hiii! I&apos;m Daniil <span className="text-neutral-500">aka @faustyu</span>.
                     I live in <RiMapPin2Fill size={16} className="inline align-baseline" />{" "}
                     <span className="font-bold cursor-help">Samara, Russia</span>.{" "}
                     My passion is development. I do websites, bots, plugins, and
-                    much more. I'm currently not working.{" "}
+                    much more. I&apos;m currently not working.{" "}
                     <StyledLink href="/blog/about-me">Read more {"-->"}</StyledLink>
                 </p>
             </section>

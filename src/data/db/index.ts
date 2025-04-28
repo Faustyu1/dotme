@@ -4,9 +4,9 @@ import * as schema from "@/data/db/schema"
 import { env } from "@/env.mjs"
 
 const client = new Client({
-    connectionString: `postgresql://${env.POSTGRES_USER}:${env.POSTGRES_PASSWORD}@${env.POSTGRES_HOST}:${env.POSTGRES_PORT}/${env.POSTGRES_DATABASE}?sslmode=disable`
-});
+    connectionString: `postgresql://${env.POSTGRES_USER}:${env.POSTGRES_PASSWORD}@${env.POSTGRES_HOST}:${env.POSTGRES_PORT}/${env.POSTGRES_DATABASE}?sslmode=disable`,
+})
 
-client.connect();
+client.connect()
 
-export const db = drizzle(client, { schema });
+export const db = drizzle(client, { schema })
