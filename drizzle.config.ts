@@ -15,5 +15,4 @@ export default {
     },
     verbose: true,
     strict: true,
-    baseURL: "http://localhost:4983"
 } satisfies Config

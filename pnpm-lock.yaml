@@ -28,7 +28,7 @@ importers:
         version: 2.30.0
       drizzle-orm:
         specifier: ^0.43.1
-        version: 0.43.1(@types/pg@8.11.6)(@vercel/postgres@0.7.2)(kysely@0.27.6)(pg@8.11.3)
+        version: 0.43.1(@types/pg@8.11.14)(@vercel/postgres@0.7.2)(kysely@0.27.6)(pg@8.11.3)
       next:
         specifier: 15.0.0-rc.0
         version: 15.0.0-rc.0(react-dom@19.0.0-rc-4c2e457c7c-20240522(react@19.0.0-rc-4c2e457c7c-20240522))(react@19.0.0-rc-4c2e457c7c-20240522)
@@ -69,6 +69,9 @@ importers:
       '@types/node':
         specifier: 18.11.18
         version: 18.11.18
+      '@types/pg':
+        specifier: ^8.11.14
+        version: 8.11.14
       '@types/react':
         specifier: ^18.2.21
         version: 18.2.33
@@ -749,6 +752,9 @@ packages:
 
   '@types/node@18.11.18':
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
+
+  '@types/pg@8.11.14':
+    resolution: {integrity: sha512-qyD11E5R3u0eJmd1lB0WnWKXJGA7s015nyARWljfz5DcX83TKAIlY+QrmvzQTsbIe+hkiFtkyL2gHC6qwF6Fbg==}
 
   '@types/pg@8.11.6':
     resolution: {integrity: sha512-/2WmmBXHLsfRqzfHW7BNZ8SbYzE8OSk7i3WjFYvfgRHj7S1xj+16Je5fUKv3lVdVzk/zn9TXOqf+avFCFIE0yQ==}
@@ -3139,6 +3145,12 @@ snapshots:
 
   '@types/node@18.11.18': {}
 
+  '@types/pg@8.11.14':
+    dependencies:
+      '@types/node': 18.11.18
+      pg-protocol: 1.6.0
+      pg-types: 4.0.2
+
   '@types/pg@8.11.6':
     dependencies:
       '@types/node': 18.11.18
@@ -3674,9 +3686,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.43.1(@types/pg@8.11.6)(@vercel/postgres@0.7.2)(kysely@0.27.6)(pg@8.11.3):
+  drizzle-orm@0.43.1(@types/pg@8.11.14)(@vercel/postgres@0.7.2)(kysely@0.27.6)(pg@8.11.3):
     optionalDependencies:
-      '@types/pg': 8.11.6
+      '@types/pg': 8.11.14
       '@vercel/postgres': 0.7.2
       kysely: 0.27.6
       pg: 8.11.3
