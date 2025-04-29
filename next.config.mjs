@@ -5,8 +5,8 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: "https",
-                hostname: "i.faustyu.xyz",
+                protocol: "http",
+                hostname: "i.otomir23.me",
             },
         ],
         dangerouslyAllowSVG: true,
